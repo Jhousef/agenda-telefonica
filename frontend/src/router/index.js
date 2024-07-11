@@ -6,7 +6,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'todo.login',
       component: Login
     },
@@ -16,7 +16,7 @@ const router = createRouter({
       component: Login
     },
     {
-      path: '/tarefas',
+      path: '/',
       name: 'todo.index',
       component: () => import('@/views/Todos/Tarefas.vue')
     },

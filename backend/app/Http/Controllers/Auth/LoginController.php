@@ -19,7 +19,11 @@ class LoginController extends Controller
             $user->tokens()->delete();
             $token = $user->createToken('authToken')->plainTextToken;
 
-            return response()->json(['token' => $token, 'user' => $user], 200);
+            return response()->json([
+                'token' => $token,
+                'user' => $user,
+                'redirect_url' => '/',
+            ], 200);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
@@ -28,7 +32,7 @@ class LoginController extends Controller
     public function register(Request $request)
     {
         $data = $request->all();
-        $this->validateRequest($request, 'register');
+        // $this->validateRequest($request, 'register');
 
 
         $user = User::create([

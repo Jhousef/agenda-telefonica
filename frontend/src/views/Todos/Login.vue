@@ -67,6 +67,8 @@ export default {
 
                 console.log('Token:', response.data.token);
 
+                localStorage.setItem('authToken', response.data.token);
+
                 router.push({ name: 'todo.index' });
             } catch (error) {
                 console.error('Erro no login:', error);
@@ -90,7 +92,9 @@ export default {
                 }, config);
                 console.log('Token:', response.data);
 
-                router.push({ name: '/login' });
+                localStorage.setItem('authToken', response.data.token);
+
+                router.push({ name: 'todo.index' });
             } catch (error) {
                 console.error('Erro no cadastro:', error);
 
