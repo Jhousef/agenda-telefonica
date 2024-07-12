@@ -43,7 +43,7 @@ class ContactController extends Controller
                 'telephone.string' => 'O campo telefone deve ser uma string.',
             ]
         );
-
+        $data['image'] = 'teste.png';
         $contact = Contact::create($data);
 
         return response()->json($contact, 201);

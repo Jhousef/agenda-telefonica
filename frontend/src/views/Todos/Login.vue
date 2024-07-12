@@ -24,7 +24,6 @@
                                 {{ isLogin ? 'Login' : 'Cadastrar' }}
                             </button>
                         </form>
-                        <!-- Botão para alternar entre Login e Cadastro -->
                         <button class="btn btn-link mt-2" @click="toggleLoginMode">{{ isLogin ? 'Cadastre-se' : 'Login'
                             }}</button>
                     </div>
